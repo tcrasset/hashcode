@@ -22,7 +22,11 @@ def read_file(filename : str):
 	return max_slices, nb_diff_pizzas, pizza_slices_per_type
 
 def solve(max_slices : int, nb_diff_pizzas : int, pizza_slices_per_type : list):
-	pass
+	
+	nb_pizzas = 3
+	pizzas_list = [0, 2, 3]
+	return nb_pizzas, pizzas_list
+
 
 def create_submission(nb_pizzas : int, pizza_nb_list : list, directory : str, output_file : str) -> None :
 	filepath = os.path.join(directory, output_file)
@@ -36,12 +40,11 @@ def create_submission(nb_pizzas : int, pizza_nb_list : list, directory : str, ou
 
 if __name__=='__main__':
 	directory = "/home/tom/Desktop/hashcode/TestStatement"
-
-	filename="a_example.in"
+	output_file = "submit_1.txt"
+	filename = "a_example.in"
 
 	max_slices, nb_diff_pizzas, pizza_slices_per_type = read_file(os.path.join(directory, filename))
 
-	solve(max_slices, nb_diff_pizzas, pizza_slices_per_type)
-	output_file = "submit_1.txt"
+	nb_pizzas, pizzas_list = solve(max_slices, nb_diff_pizzas, pizza_slices_per_type)
 
-	create_submission(3, [0, 2, 3], directory = directory, output_file = output_file)
+	create_submission(nb_pizzas, pizzas_list, directory = directory, output_file = output_file)
